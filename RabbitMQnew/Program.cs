@@ -25,7 +25,7 @@ namespace RabbitMQnew
 
             channel.ExchangeDeclare("RabbitMQExchangeTest", ExchangeType.Direct);               // Create Exchange
 
-            channel.QueueDeclare("RabbitMQQueueTest", false, false, false, null);               // Create Queue
+            channel.QueueDeclare("RabbitMQQueueTest", true, false, false, null);                // Create Queue
 
             channel.QueueBind("RabbitMQQueueTest", "RabbitMQExchangeTest", "routing key");      // Bind the Queue to the Exchange
 
